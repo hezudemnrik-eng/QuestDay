@@ -1,0 +1,274 @@
+.planner {
+  position: relative;
+}
+
+.planner-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.planner-nav,
+.planner-export {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.planner-export {
+  margin-left: auto;
+}
+
+.planner-range {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+/* Wochenleiste: 7 Tage nebeneinander, passt immer in die Breite (kein Scroll). */
+.weekbar {
+  display: flex;
+  gap: 4px;
+}
+
+.weekbar-day {
+  flex: 1 1 0;
+  min-width: 0;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+}
+
+.weekbar-day.is-today .weekbar-num {
+  color: var(--color-primary);
+}
+
+.weekbar-day.is-selected {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.weekbar-day.is-selected .weekbar-dow,
+.weekbar-day.is-selected .weekbar-num {
+  color: #fff;
+}
+
+.weekbar-day.plan-drop-hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.weekbar-day-btn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  background: none;
+  border: none;
+  padding: 8px 2px;
+  color: var(--color-text);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.weekbar-dow {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.weekbar-num {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.weekbar-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.weekbar-dot.on {
+  background: var(--color-primary);
+}
+
+.weekbar-day.is-selected .weekbar-dot.on {
+  background: #fff;
+}
+
+/* Ausgewählter Tag: Detailbereich + großes Ablageziel. */
+.planner-selected {
+  margin-top: 10px;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  border: 1px solid transparent;
+}
+
+.planner-selected.plan-drop-hover,
+.planner-tray.plan-drop-hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.planner-selected-head {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.planner-selected-count {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Die Checkbox sitzt im Chip und behält ihre Trefferfläche, ohne die Zeile zu sprengen. */
+.plan-chip-check {
+  display: flex;
+  align-items: center;
+  flex: none;
+  margin-right: 1px;
+}
+
+.plan-chip-check .check-circle {
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+}
+
+.planner-selected-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.planner-day-empty {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  padding: 4px 0;
+}
+
+.plan-chip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  max-width: 100%;
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-sm);
+  padding: 6px 8px;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.plan-chip.draggable {
+  cursor: grab;
+}
+
+.plan-chip.done {
+  opacity: 0.5;
+}
+
+.plan-chip.done .plan-chip-title {
+  text-decoration: line-through;
+}
+
+.plan-chip.goal {
+  background: transparent;
+  border: 1px dashed var(--color-border);
+}
+
+.plan-chip.missed {
+  border-color: var(--color-danger);
+}
+
+.plan-chip-title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.planner-tray {
+  margin-top: 10px;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  border: 1px solid transparent;
+}
+
+.planner-tray-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+}
+
+.tray-group + .tray-group {
+  margin-top: 10px;
+}
+
+.tray-group-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-bottom: 6px;
+}
+
+.tray-group-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.planner-tray-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.planner-tray-empty {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+/* Ghost im dnd-kit DragOverlay (Overlay positioniert selbst). */
+.plan-ghost {
+  pointer-events: none;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.plan-chip.is-dragging {
+  opacity: 0.4;
+}

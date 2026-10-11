@@ -1,0 +1,102 @@
+.goal-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.goal-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.goal-card-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.goal-card-title {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.goal-done-label {
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.goal-card.done .goal-card-title {
+  color: var(--color-text-secondary);
+}
+
+.goal-card-target {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin-bottom: 10px;
+}
+
+.goal-card-progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+.substep-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.substep-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.substep-item.done span {
+  text-decoration: line-through;
+  color: var(--color-text-secondary);
+}
+
+.goal-missed-badge {
+  color: var(--color-danger);
+  font-weight: 600;
+}
+
+.goal-cycle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.goal-cycle-count {
+  color: var(--color-text-secondary);
+}
+
+.goal-stop-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  text-decoration: underline;
+  font-size: 12px;
+  padding: 2px;
+}
+
+.goal-stopped-label {
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
